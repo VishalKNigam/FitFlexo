@@ -4,13 +4,15 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './Components/NavBar/NavBar'
 import HeroSection from './Components/Home/HeroSection'
+import Footer from './Components/Footer/Footer'
 
 function App() {
 
   return (
    <>
-    <Navbar />
-    <HeroSection/>
+    {/* <Navbar />
+    <HeroSection/> */}
+    <Footer />
    </>
   )
 }

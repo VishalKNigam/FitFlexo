@@ -16,7 +16,7 @@ export default function HeroSection() {
 
   const handleClick = () => {
     if (isAuth) {
-      Navigate("/doctors");
+      Navigate("/trainers");
     } else {
       Navigate("/register");
     }
