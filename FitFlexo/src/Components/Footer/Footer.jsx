@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <div>
-      <div className="container-fluid text-green themeBg mt-5">
+      <div className="container-fluid text-white themeBg mt-5">
         <div className="row justify-content-center themeBg p-5 ms-md-4">
           <div className="col-md-4 themeBg px-4" data-aos="fade-up">
             <h3 className="themeBg">FitFlexo</h3>
