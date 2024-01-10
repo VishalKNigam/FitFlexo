@@ -40,7 +40,7 @@ export default function HeroSection() {
               onClick={handleClick}
               className="btn mt-4 ms-md-5 px-3 fw-bold"
             >
-              Book Appointment
+            Join Us
             </Button>
           </div>
 
