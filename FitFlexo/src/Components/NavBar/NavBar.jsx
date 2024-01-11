@@ -1,10 +1,12 @@
 import { Link, NavLink } from "react-router-dom"
+import { Button } from "@mui/material"
 import { useContext } from "react";
 import { AuthContext } from "../AuthContext/AuthContext";
-
-
+import User from "../../Login/User";
 export default function Navbar(){
   
+  const {isAuth} = useContext(AuthContext);
+
   const handleTop = ()=>{
     window.scrollTo(0, 0);
   }
@@ -35,6 +37,18 @@ export default function Navbar(){
             <NavLink onClick={handleTop} className="nav-link fw-bold text-black" to="/contact">contact</NavLink>
           </li>
         </ul>
+        <div className="d-flex flex-column flex-lg-row">
+
+          {/* <a href="./login.html" className="btn btn-1 fw-bold  px-4 m-3 m-lg-0 mx-lg-3">Login</a> */}
+          <NavLink to="/register" >
+          {/* <Button  className="btn btn-2 fw-bold px-4 mx-3 mx-lg-0  me-xl-5">{isAuth?"UserName":"Register"}</Button> */}
+          
+
+          {isAuth?<User/>:<Button  className="btn btn-2 fw-bold px-4 mx-3 mx-lg-0  me-xl-5">Login</Button>}
+          </NavLink>
+          
+
+        </div>
       </div>
     </div>
   </nav>
