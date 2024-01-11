@@ -11,21 +11,20 @@ import Timeline from './Components/Home/Timeline'
 import Testimonial from './Components/Home/testimonial'
 import Accordion from './Components/Accordion/Accordion'
 import BasicAccordion from './Components/Accordion/Accord'
+import SignUp from "./Login/SignUp"
+import Login from "./Login/Login"
+import AllRoutes from './Components/AllRoutes/AllRoutes'
 
 function App() {
 
   return (
    <>
-    <Navbar />
-    <HeroSection/>
-    <ServiceHome/>
-    <Crousel/>
-    <Timeline/>
-    <Testimonial/>
-    <BasicAccordion/>
-    <Footer />
+   <Navbar />
+   <AllRoutes />
+   <BasicAccordion />
+   <Footer />
    </>
   )
 }
 
-export default App
+export default App;
