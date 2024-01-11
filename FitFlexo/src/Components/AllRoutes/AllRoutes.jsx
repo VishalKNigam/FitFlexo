@@ -5,6 +5,8 @@ import Home from '../Home/Home';
 import LayoutLogin from '../../Login/LayoutLoging';
 import SignUp from '../../Login/SignUp';
 import LogIn from '../../Login/Login';
+import Trainers from '../Trainers/Trainers';
+import Appointment from '../Appointment/Appointment';
 
 const AllRoutes = () => {
 
@@ -14,6 +16,8 @@ const AllRoutes = () => {
     <>
       <Routes>
         <Route path="/" element={<Home/>}/>
+        <Route path="/trainers" element={<Trainers/>}/>
+        <Route path="/appointment" element={<Appointment/>}/>
         <Route path="/register" element={<LayoutLogin/>}/>
         <Route path="/signUp" element={<SignUp/>}/>
         <Route path="/login" element={!isAuth?<LogIn/>:<Home/>}/>

@@ -31,7 +31,7 @@ export default function Navbar(){
             <NavLink onClick={handleTop} className="nav-link fw-bold text-black" to="/trainers">Trainers</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink onClick={handleTop} className="nav-link fw-bold text-black" to="/appointments">Appointments</NavLink>
+            <NavLink onClick={handleTop} className="nav-link fw-bold text-black" to="/appointment">Appointment</NavLink>
           </li>
           <li className="nav-item">
             <NavLink onClick={handleTop} className="nav-link fw-bold text-black" to="/contact">contact</NavLink>
