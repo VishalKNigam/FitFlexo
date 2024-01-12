@@ -12,13 +12,11 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useState, useReducer } from "react";
+import { useReducer } from "react";
 import { useEffect} from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Swal from 'sweetalert2'
-import { useNavigate } from "react-router-dom";
-
+import Swal from "sweetalert2";
 
 const defaultTheme = createTheme();
 
@@ -26,83 +24,69 @@ const initialState = {
   firstName: "",
   lastName: "",
   email: "",
-  password: "",
-  booking: false,
-  member: false
+  message: "",
 };
 
-export default function SignUp() {
 
-const navigate = useNavigate();
-
-  const reducer = (state, action) => {
+export default function Contact() {
+  function reducer(state, action) {
     switch (action.type) {
-      case "CHANGE":
+      case "CHANGE": {
         return {
           ...state,
           [action.payload.name]: action.payload.value,
         };
-      case "RESET":
-        return initialState; 
+      }
       default:
-        throw new Error(`Invalid action type`);
-    }
-  };
-  
-
-
-  async function postUser() {
-    try {
-      let res = await fetch(`https://fitness-mkwg.onrender.com/user`, {
-        method: "POST",
-        body: JSON.stringify(state),
-        headers: {
-          "Content-type": "application/json",
-        },
-      });
-      let resp = await res.json();
-      dispatch({
-        type: 'RESET' 
-      });
-    } catch (err) {
-      console.log("error", err);
+        return state;
     }
   }
-  
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const { firstName, lastName, email, password } = state;
-console.log(state)
+  function postData() {
+    console.log(state);
+    fetch(`https://fitness-mkwg.onrender.com/contact`, {
+      method: "POST",
+      body: JSON.stringify(state), 
+      headers: {
+        "Content-type": "application/json"
+      }
+    })
+      .then((res) => res.json()) // Return the response JSON
+      .then((res) => {
+        console.log('response', res);
+      })
+      .catch((err) => {
+        console.log(err, 'error');
+      });
+  }
+  
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    postUser();
-    Swal.fire({
-      title: "Signup SuccessFully",
-      icon : "success",
-      showClass: {
-        popup: `
-          animate__animated
-          animate__fadeInUp
-          animate__faster
-        `
-      },
-      hideClass: {
-        popup: `
-          animate__animated
-          animate__fadeOutDown
-          animate__faster
-        `
-      }
-    }).then(() => {
-      navigate("/login");
-    });
-    console.log("Form submitted:", state);
     
+    Swal.fire({
+        title: "Do you want to save the changes?",
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: "Save",
+        denyButtonText: `Don't save`
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            
+          Swal.fire("Saved!", "", "success");
+          postData();
+        } else if (result.isDenied) {
+          Swal.fire("Changes are not saved", "", "info");
+        }
+      });
+    console.log("Form submitted:", state);
   };
 
   const handleChange = (e) => {
-    const { value, name } = e.target;
+    const { name, value } = e.target;
 
     dispatch({
       type: "CHANGE",
@@ -110,9 +94,12 @@ console.log(state)
     });
   };
 
+
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);
+
+  const { firstName, lastName, email, message } = state;
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -124,13 +111,17 @@ console.log(state)
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: "#3167D9" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign up
+            
+            <span className="themeColor">Your</span>{" "}
+
+           Voice Corner
           </Typography>
           <Box
             component="form"
@@ -146,9 +137,9 @@ console.log(state)
                   required
                   fullWidth
                   id="firstName"
-                  label="First Name"
                   value={firstName}
                   onChange={handleChange}
+                  label="First Name"
                   autoFocus
                 />
               </Grid>
@@ -180,13 +171,14 @@ console.log(state)
                 <TextField
                   required
                   fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  value={password}
+                  multiline
+                  rows={4} 
+                  name="message"
+                  value={message}
                   onChange={handleChange}
-                  autoComplete="new-password"
+                  label="Textarea"
+                  type="text"
+                  id="password"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -198,22 +190,14 @@ console.log(state)
                 />
               </Grid>
             </Grid>
-            <Button
-              className="btn"
+            <Button className="btn"
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign Up
+              Submit
             </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link className="themeColor" href="/login" variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid>
           </Box>
         </Box>
       </Container>

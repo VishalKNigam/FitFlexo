@@ -7,6 +7,7 @@ import SignUp from '../../Login/SignUp';
 import LogIn from '../../Login/Login';
 import Trainers from '../Trainers/Trainers';
 import Appointment from '../Appointment/Appointment';
+import Contact from '../../Contact/Contact';
 
 const AllRoutes = () => {
 
@@ -20,6 +21,7 @@ const AllRoutes = () => {
         <Route path="/appointment" element={<Appointment/>}/>
         <Route path="/register" element={<LayoutLogin/>}/>
         <Route path="/signUp" element={<SignUp/>}/>
+        <Route path="/contact" element={<Contact/>}/>
         <Route path="/login" element={!isAuth?<LogIn/>:<Home/>}/>
       </Routes>
     </>
