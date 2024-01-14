@@ -13,7 +13,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useReducer } from "react";
-import { useEffect} from "react";
+import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Swal from "sweetalert2";
@@ -26,7 +26,6 @@ const initialState = {
   email: "",
   message: "",
 };
-
 
 export default function Contact() {
   function reducer(state, action) {
@@ -48,40 +47,38 @@ export default function Contact() {
     console.log(state);
     fetch(`https://fitness-mkwg.onrender.com/contact`, {
       method: "POST",
-      body: JSON.stringify(state), 
+      body: JSON.stringify(state),
       headers: {
-        "Content-type": "application/json"
-      }
+        "Content-type": "application/json",
+      },
     })
       .then((res) => res.json()) // Return the response JSON
       .then((res) => {
-        console.log('response', res);
+        console.log("response", res);
       })
       .catch((err) => {
-        console.log(err, 'error');
+        console.log(err, "error");
       });
   }
-  
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
+
     Swal.fire({
-        title: "Do you want to save the changes?",
-        showDenyButton: true,
-        showCancelButton: true,
-        confirmButtonText: "Save",
-        denyButtonText: `Don't save`
-      }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-            
-          Swal.fire("Saved!", "", "success");
-          postData();
-        } else if (result.isDenied) {
-          Swal.fire("Changes are not saved", "", "info");
-        }
-      });
+      title: "Do you want to save the changes?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Save",
+      denyButtonText: `Don't save`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire("Saved!", "", "success");
+        postData();
+      } else if (result.isDenied) {
+        Swal.fire("Changes are not saved", "", "info");
+      }
+    });
     console.log("Form submitted:", state);
   };
 
@@ -93,7 +90,6 @@ export default function Contact() {
       payload: { name, value },
     });
   };
-
 
   useEffect(() => {
     AOS.init({ duration: 2000 });
@@ -111,17 +107,14 @@ export default function Contact() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: "#3167D9" }}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
-            
-            <span className="themeColor">Your</span>{" "}
 
-           Voice Corner
+          <Typography component="h1" variant="h5">
+            <span className="themeColor">Your</span> Voice Corner
           </Typography>
           <Box
             component="form"
@@ -172,7 +165,7 @@ export default function Contact() {
                   required
                   fullWidth
                   multiline
-                  rows={4} 
+                  rows={4}
                   name="message"
                   value={message}
                   onChange={handleChange}
@@ -186,11 +179,12 @@ export default function Contact() {
                   control={
                     <Checkbox value="allowExtraEmails" color="primary" />
                   }
-                  label="I want to receive inspiration, marketing promotions and updates via email."
+                  label="I want to receive inspiration updates via email."
                 />
               </Grid>
             </Grid>
-            <Button className="btn"
+            <Button
+              className="btn"
               type="submit"
               fullWidth
               variant="contained"
@@ -201,6 +195,31 @@ export default function Contact() {
           </Box>
         </Box>
       </Container>
+
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginTop: 4,
+        }}
+      >
+        <Typography
+          component="h2"
+          variant="h6"
+          color="textSecondary"
+          gutterBottom
+        >
+          About Our Website
+        </Typography>
+        <Typography component="p" variant="body2" align="center">
+          Welcome to <span className="themeColor">Your Voice Corner</span> - a
+          platform where you can share your thoughts and connect with others.
+          Our mission is to provide a space for meaningful conversations and
+          inspiration. Feel free to reach out to us with your feedback or any
+          inquiries.
+        </Typography>
+      </Box>
     </ThemeProvider>
   );
 }
