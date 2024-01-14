@@ -40,24 +40,27 @@
 
 ## **_Home Page_**
 
-<img width="1075" alt="small" src="">
-<img width="1075" alt="large" src="">
+<img width="1075" alt="small" src="https://github.com/VishalKNigam/FitFlexo/blob/main/FitFlexo/public/Images/Home-Small%20Screen.png">
+<img width="1075" alt="large" src="https://github.com/VishalKNigam/FitFlexo/blob/main/FitFlexo/public/Images/Home-big.png">
 
 ## **_Trainers Page_**
 
-<img width="1069" alt="error" src="">
+<img width="1069" alt="error" src="https://github.com/VishalKNigam/FitFlexo/blob/main/FitFlexo/public/Images/Trainers.png">
 
 ## **_Appointment Page_**
 
-<img width="1069" alt="error" src="">
+<img width="1069" alt="error" src="https://github.com/VishalKNigam/FitFlexo/blob/main/FitFlexo/public/Images/Appointment.png">
 
 ## **_SignUp Page__Login Page_**
 
-<img width="1064" alt="error" src="">
+<img width="1064" alt="error" src="https://github.com/VishalKNigam/FitFlexo/blob/main/FitFlexo/public/Images/SignUp_login.png">
+
+## **_Contact Page_**
+
+<img width="1064" alt="error" src="https://github.com/VishalKNigam/FitFlexo/blob/main/FitFlexo/public/Images/Contact.png">
 
 ## **_Admin Page_**
 
-<img width="1064" alt="error" src="">
+<img width="1064" alt="error" src="https://github.com/VishalKNigam/FitFlexo/blob/main/FitFlexo/public/Images/admin.png">
 
 # Thank You
-=======
