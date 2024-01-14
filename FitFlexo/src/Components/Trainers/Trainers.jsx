@@ -116,7 +116,7 @@ export default function Trainers() {
               variant="red"
               onClick={(e) => setFilter(e.target.value)}
             >
-              All Doctor
+              All Trainers
             </Button>
           </div>
         </div>
