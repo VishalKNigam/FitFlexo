@@ -40,7 +40,6 @@
 
 ## **_Home Page_**
 
-<img width="1075" alt="small" src="https://github.com/VishalKNigam/FitFlexo/blob/main/FitFlexo/public/Images/Home-Small%20Screen.png">
 <img width="1075" alt="large" src="https://github.com/VishalKNigam/FitFlexo/blob/main/FitFlexo/public/Images/Home-big.png">
 
 ## **_Trainers Page_**
