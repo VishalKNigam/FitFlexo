@@ -29,6 +29,7 @@ export default function Logout(){
 
     useEffect(() => {
         AOS.init({ duration: 2000 });
+        
       }, []);
 
     return (
