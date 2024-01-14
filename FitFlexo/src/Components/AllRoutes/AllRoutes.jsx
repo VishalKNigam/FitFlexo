@@ -8,7 +8,7 @@ import LogIn from '../../Login/Login';
 import Trainers from '../Trainers/Trainers';
 import Appointment from '../Appointment/Appointment';
 import Contact from '../../Contact/Contact';
-
+import Dashboard from '../Dashboard/Dashboard';
 const AllRoutes = () => {
 
     const {isAuth} = useContext(AuthContext);
@@ -22,6 +22,7 @@ const AllRoutes = () => {
         <Route path="/register" element={<LayoutLogin/>}/>
         <Route path="/signUp" element={<SignUp/>}/>
         <Route path="/contact" element={<Contact/>}/>
+        <Route path="/dashboard" element={<Dashboard/>}/>
         <Route path="/login" element={!isAuth?<LogIn/>:<Home/>}/>
       </Routes>
     </>
