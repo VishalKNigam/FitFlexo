@@ -1,23 +1,19 @@
 
 # FitFlexo - Fitness Website
 
-# **_Project Purpose:- E-Commerce Website_**
-
 **_"Welcome to FitFlexo, your ultimate fitness solution! Experience our responsive app with a captivating UI. Connect with diverse fitness trainers, effortlessly book sessions, and make payments. Our project boasts an administrative interface for streamlined management. Explore our contact page for your questions and valuable suggestions. Your go-to destination for fitness excellence!"_**
-
----
 
 ## **_Team Members_** :
 
-**_Team Member-1 & Student Code_** : **_Vishal Kumar Nigam ( fw23_0719 ) https://github.com/VishalKNigam_**
+**_Team Member-1, Student Code, & Git_Profile_** : **_Vishal Kumar Nigam ( fw23_0719 ) https://github.com/VishalKNigam_**
 
-**_Team Member-2 & Student Code_** : **_Pragati Srivas ( fw26_072 ) https://github.com/PragatiS11_**
+**_Team Member-2 & Student Codem , & Git_Profile_**_** : **_Pragati Srivas ( fw26_072 ) https://github.com/PragatiS11_**
 
 ## **_Tech Stacks_**
 
 **_Frontend Technologies: React, Material UI, BootStrap_**
 
-**_Additional Tools: Mock API (using render),AOS, Axios_**
+**_Additional Tools: Mock API (using render), AOS, Axios_**
 
 ## **_Installation Instructions_**
 
