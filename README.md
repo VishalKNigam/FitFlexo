@@ -7,7 +7,7 @@
 
 **_Team Member-1, Student Code, & Git_Profile_** : **_Vishal Kumar Nigam ( fw23_0719 ) https://github.com/VishalKNigam_**
 
-**_Team Member-2 & Student Codem , & Git_Profile_**_** : **_Pragati Srivas ( fw26_072 ) https://github.com/PragatiS11_**
+**_Team Member-2, Student Code , & Git_Profile_** : **_Pragati Srivas ( fw26_072 ) https://github.com/PragatiS11_**
 
 ## **_Tech Stacks_**
 
